@@ -31,6 +31,7 @@ hostname = api.m.jd.com
 taobao (beta)
 ```
 [Rule]
+# 注意优先级
 # 目前这条规则屏蔽的是阿里云IP，其他使用阿里云IP的应用可能会有问题（钉钉等），谨慎使用
 IP-CIDR, 203.119.128.0/17, REJECT, no-resolve
 [Script]
