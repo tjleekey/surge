@@ -32,10 +32,11 @@ taobao (beta)
 ```
 [Rule]
 # 注意优先级（建议放在第一条）
-# 缩小匹配 IP 范围，减少干扰其他应用，不一定适用所有人，可以自己抓包调节
+# 这两条规则可以最大程度缩小 IP 范围，减少干扰其他应用，不一定适用所有人，可以自己抓包调节
 # IP-CIDR, 203.119.144.0/23, REJECT, no-resolve
-# 目前这条规则匹配的是阿里云 IP 段，其他使用阿里云 IP 的应用可能会有问题（钉钉等），谨慎使用
-IP-CIDR, 203.119.128.0/17, REJECT, no-resolve
+# IP-CIDR, 203.119.175.0/24, REJECT, no-resolve
+# 目前这条规则匹配的是部分阿里云 IP 段，其他使用这些阿里云 IP 的应用可能会有问题，谨慎使用
+IP-CIDR, 203.119.128.0/18, REJECT, no-resolve
 [Script]
 http-response ^https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
 [MITM]
@@ -81,10 +82,11 @@ taobao (beta)
 ```
 [filter_local]
 # 注意优先级（建议放在第一条）
-# 缩小匹配 IP 范围，减少干扰其他应用，不一定适用所有人，可以自己抓包调节
+# 这两条规则可以最大程度缩小 IP 范围，减少干扰其他应用，不一定适用所有人，可以自己抓包调节
 # ip-cidr, 203.119.144.0/23, reject, no-resolve
-# 目前这条规则匹配的是阿里云 IP 段，其他使用阿里云 IP 的应用可能会有问题（钉钉等），谨慎使用
-ip-cidr, 203.119.128.0/17, reject, no-resolve
+# ip-cidr, 203.119.175.0/24, reject, no-resolve
+# 目前这条规则匹配的是部分阿里云 IP 段，其他使用这些阿里云 IP 的应用可能会有问题，谨慎使用
+ip-cidr, 203.119.128.0/18, reject, no-resolve
 [rewrite_local]
 ^https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.getdetail url script-response-body tb_price_qx.js
 [mitm]
