@@ -2,11 +2,11 @@
 README：https://github.com/yichahucha/surge/tree/master
  */
 
-const isSurge = typeof $httpClient != "undefined"
-const isQuanX = typeof $task != "undefined"
 const consoleLog = false
 const url = $request.url
 const body = $response.body
+const isSurge = typeof $httpClient != "undefined"
+const isQuanX = typeof $task != "undefined"
 
 if (true) {
     let obj = JSON.parse(body)
