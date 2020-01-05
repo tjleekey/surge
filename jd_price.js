@@ -119,10 +119,10 @@ function request_history_price(share_url, callback) {
         $httpClient.post(options, function (error, response, data) {
             if (!error) {
                 callback(JSON.parse(data));
-                if (consoleLog) console.log("Data:\n" + data);
+                if (console_log) console.log("Data:\n" + data);
             } else {
                 callback(null, null);
-                if (consoleLog) console.log("Error:\n" + error);
+                if (console_log) console.log("Error:\n" + error);
             }
         })
     }
@@ -130,10 +130,10 @@ function request_history_price(share_url, callback) {
         options["method"] = "POST"
         $task.fetch(options).then(response => {
             callback(JSON.parse(response.body));
-            if (consoleLog) console.log("Data:\n" + response.body);
+            if (console_log) console.log("Data:\n" + response.body);
         }, reason => {
             callback(null, null);
-            if (consoleLog) console.log("Error:\n" + reason.error);
+            if (console_log) console.log("Error:\n" + reason.error);
         })
     }
 }
