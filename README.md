@@ -88,7 +88,7 @@ taobao (beta)
 # 目前这条规则匹配的是部分阿里云 IP 段，其他使用这些阿里云 IP 的应用可能会有问题，谨慎使用
 ip-cidr, 203.119.128.0/18, reject, no-resolve
 [rewrite_local]
-^https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.getdetail url script-response-body tb_price_qx.js
+^https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.getdetail url script-response-body tb_price.js
 [mitm]
 hostname = trade-acs.m.taobao.com
 ```
