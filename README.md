@@ -74,7 +74,7 @@ Display commodity historical price
 JD
 ```
 [rewrite_local]
-^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body jd_price_qx.js
+^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body jd_price.js
 [mitm]
 hostname = api.m.jd.com
 ```
